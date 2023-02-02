@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model announce {
+  id                 Int     @id(map: "PK_announce_1") @default(autoincrement())
+  lic_name           String? @db.VarChar(50)
+  address            String? @db.VarChar(100)
+  establishment_name String? @db.VarChar(50)
+  owner              String? @db.VarChar(50)
+  district           String? @db.VarChar(50)
+  point_x            String? @db.VarChar(50)
+  point_y            String? @db.VarChar(50)
+}
